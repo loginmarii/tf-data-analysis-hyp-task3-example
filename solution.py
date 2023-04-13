@@ -7,7 +7,7 @@ chat_id = 1676035524 # Ваш chat ID, не меняйте название пе
 def solution(x: np.array, y: np.array) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
     from scipy.stats import ttest_ind
     stat, p = ttest_ind(x, y, equal_var=False)
-    if stat < 0 and p >= 0.05:
+    if stat < 0 and p <= 0.05:
         b = True
     else:
         b = False
